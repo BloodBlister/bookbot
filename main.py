@@ -5,9 +5,12 @@ def main():
     lowercase_book_text = book_text.lower()
     book_character_count = character_count(lowercase_book_text)
     book_word_count = word_count(book_text)
-    print (book_text)
+    print (f"Summary Report for book: {book_directory}:")
     print (f"Word count: {book_word_count}")
-    print (book_character_count)
+    for character in book_character_count:
+        if character.isalpha():
+            count = book_character_count[character]
+            print (f"Character: '{character}' found {count} times")
 
 
 def open_book(directory):
